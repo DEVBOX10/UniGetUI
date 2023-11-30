@@ -74,6 +74,10 @@ class RootWindow(QMainWindow):
         win32mica.ApplyMica(1, win32mica.MicaTheme.AUTO, OnThemeChange=lambda _: self.callInMain.emit(lambda: self.ApplyStyleSheetsAndIcons(True)))  # Spawn a theme thread
         self.ApplyStyleSheetsAndIcons()
         print("🟢 Main application loaded...")
+        
+        # if "beta" not in versionName and not getSettings(f"ReleaseNotesForVersion{versionName}"):
+        #     setSettings(f"ReleaseNotesForVersion{versionName}", True)
+        #     self.showHelpUrl(f"https://marticliment.com/wingetui/notes/{versionName}.html")
 
     def loadWidgets(self) -> None:
 
